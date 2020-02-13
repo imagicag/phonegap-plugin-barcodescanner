@@ -358,6 +358,8 @@ parentViewController:(UIViewController*)parentViewController
 
 //--------------------------------------------------------------------------
 - (void)openDialog {
+    // Change from Jack: open it in fullscreen to avoid swipping gesture from user which causes errors
+    [self.viewController setModalPresentationStyle:UIModalPresentationFullScreen];
     [self.parentViewController
      presentViewController:self.viewController
      animated:self.isTransitionAnimated completion:nil
